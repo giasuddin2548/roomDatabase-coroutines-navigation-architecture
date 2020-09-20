@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+
+    tools:ignore="UnusedNavigation"
+    app:startDestination="@id/fragmentHome">
+
+    <fragment
+        android:id="@+id/fragmentHome"
+        android:name="com.genxmultiplexer.roomdatabase.ui.FragmentHome"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+
+            android:id="@+id/actionAddNoteId"
+            app:destination="@id/fragmentAddNote" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/fragmentAddNote"
+        android:name="com.genxmultiplexer.roomdatabase.ui.FragmentAddNote"
+        android:label="fragment_add_note"
+        tools:layout="@layout/fragment_add_note" >
+
+
+        <action
+            android:id="@+id/actionSaveNoteId"
+            app:destination="@id/fragmentHome" />
+
+        <argument
+            android:name="argName"
+            app:argType="com.genxmultiplexer.roomdatabase.roomdatabse.NoteEntity"
+            app:nullable="true"
+            android:defaultValue="@null" />
+
+
+    </fragment>
+</navigation>
